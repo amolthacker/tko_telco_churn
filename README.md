@@ -1,5 +1,6 @@
-# TKO Lab
-## Telco churn with refactor code
+# Customer Churn
+
+## Churn Model with Interpretability
 This is the CML port of the Refractor prototype which is part of the [Interpretability
 report from Cloudera Fast Forward Labs](https://clients.fastforwardlabs.com/ff06/report).
 
@@ -10,14 +11,14 @@ You also need to Set your Workload Password.
 
 In CDP, click on your user name (bottom left), then click Profile, then click Set Workload Password.
 You can user your current password, but you might have to add a `!` to meet the requirements.
-For the envrionment, select `jfletcher-cdp-env`.
+For the envrionment, select `athacker-cdp-env`.
 
 ### 1 Ingest Data
 Open `1_data_ingest.py` in a workbench: python3, 1 CPU, 2 GB.
 
-Change the hadoop principle to your user name. i.e. replace `jfletcher` in the file with your `trail21xx` user.
+Change the hadoop principle to your user name. i.e. replace `athacker` in the file with your `trail21xx` user.
 
-`.config("spark.hadoop.yarn.resourcemanager.principal","jfletcher")\`
+`.config("spark.hadoop.yarn.resourcemanager.principal","athacker")\`
 
 Run the file. 
 
@@ -52,7 +53,14 @@ If you created your own model (see above)
 In the deployed Explainer model -> Settings note (copy) the "Access Key" (ie. mukd9sit7tacnfq2phhn3whc4unq1f38)
 
 
-### 5 Deploy Application
+### 5 Run Experiments
+
+Go to the **Experiments** section and select "New Experiment" with the following:
+* **Script**: 5_experiments.py
+* **Kernel**: Python 3
+* **Engine Profile**: 1vCPU / 2 GiB Memory  
+
+### 6 Deploy Application
 
 From the Project level click on "Open Workbench" (note you don't actually have to Launch a session) in order to edit a file.
 Select the flask/single_view.html file and paste the Access Key in at line 19. 

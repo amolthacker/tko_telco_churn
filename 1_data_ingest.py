@@ -10,7 +10,7 @@ spark = SparkSession\
 
 ## Add the following config if you want to run on the k8s cluster and remove `local[*]`
 #    .config("spark.hadoop.fs.s3a.s3guard.ddb.region","us-east-1")\
-#    .config("spark.yarn.access.hadoopFileSystems","s3a://jfletcher-cdp-bucket/")\
+#    .config("spark.yarn.access.hadoopFileSystems","s3a://athacker-cdp-bucket/")\
     
 
 schema = StructType(
