@@ -2,19 +2,17 @@ import requests
 import json
 import cdsw
 
-model_endpoint = 'https://modelservice.ml-5d0a30a0-75c.cdp-cldr.ylcu-atmi.cloudera.site/model'
-access_key = "myvkdz4m0suxv482hon1ssyay15ft09y"
+model_endpoint = 'MODEL_ENDPOINT'
+access_key = "MODEL_ACCESS_KEY"
 
 monthly_charges = 70.00
-total_charges = 1400.00
 tenure = 30
 
 if len(sys.argv) > 1:
   monthly_charges = float(sys.argv[1])
-  total_charges = float(sys.argv[2])
-  tenure = float(sys.argv[3])
+  tenure = float(sys.argv[2])
 
-model_input = {"StreamingTV":"No","MonthlyCharges":monthly_charges,"PhoneService":"No","PaperlessBilling":"No","Partner":"No","OnlineBackup":"No","gender":"Female","Contract":"Month-to-month","TotalCharges":total_charges,"StreamingMovies":"No","DeviceProtection":"No","PaymentMethod":"Bank transfer (automatic)","tenure":tenure,"Dependents":"No","OnlineSecurity":"No","MultipleLines":"No","InternetService":"DSL","SeniorCitizen":"No","TechSupport":"No"}
+model_input = {"StreamingTV":"No","MonthlyCharges":monthly_charges,"PhoneService":"No","PaperlessBilling":"No","Partner":"No","OnlineBackup":"No","gender":"Female","Contract":"Month-to-month","TotalCharges":1500,"StreamingMovies":"No","DeviceProtection":"No","PaymentMethod":"Bank transfer (automatic)","tenure":tenure,"Dependents":"No","OnlineSecurity":"No","MultipleLines":"No","InternetService":"DSL","SeniorCitizen":"No","TechSupport":"No"}
 data = {"accessKey":access_key, "request":model_input}
 headers = {'Content-Type': 'application/json'}
 
